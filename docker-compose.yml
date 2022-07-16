@@ -1,0 +1,12 @@
+version: "3"
+services:
+  website:
+    build:
+      context: .
+      args:
+        PROXY: '' # clone 仓库时代理地址
+        TAG: master # antd 文档tag
+    container_name: ant_design_website
+    restart: "on-failure:3"
+    ports:
+      - 8088:80

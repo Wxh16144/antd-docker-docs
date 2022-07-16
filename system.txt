@@ -1,0 +1,47 @@
+
+  System:
+    OS: macOS 12.4
+    CPU: (10) arm64 Apple M1 Pro
+    Memory: 376.97 MB / 32.00 GB
+    Shell: 5.8.1 - /bin/zsh
+  Binaries:
+    Node: 16.13.0 - ~/.nvm/versions/node/v16.13.0/bin/node
+    Yarn: 1.22.17 - ~/.nvm/versions/node/v16.13.0/bin/yarn
+    npm: 8.12.1 - ~/.nvm/versions/node/v16.13.0/bin/npm
+    Watchman: 2022.03.21.00 - /opt/homebrew/bin/watchman
+  Managers:
+    Cargo: 1.60.0 - ~/.cargo/bin/cargo
+    CocoaPods: 1.11.3 - /opt/homebrew/bin/pod
+    Homebrew: 3.4.9 - /opt/homebrew/bin/brew
+    pip3: 20.2.3 - /usr/bin/pip3
+    RubyGems: 3.0.3.1 - /usr/bin/gem
+  Utilities:
+    Make: 3.81 - /usr/bin/make
+    GCC: 13.1.6 - /usr/bin/gcc
+    Git: 2.35.2 - /opt/homebrew/bin/git
+    Clang: 13.1.6 - /usr/bin/clang
+  Servers:
+    Apache: 2.4.53 - /usr/sbin/apachectl
+  Virtualization:
+    Docker: 20.10.13 - /usr/local/bin/docker
+  SDKs:
+    iOS SDK:
+      Platforms: DriverKit 21.4, iOS 15.5, macOS 12.3, tvOS 15.4, watchOS 8.5
+  IDEs:
+    VSCode: 1.69.1 - /usr/local/bin/code
+    Vim: 8.2 - /usr/bin/vim
+    Xcode: 13.4/13F17a - /usr/bin/xcodebuild
+  Languages:
+    Bash: 3.2.57 - /bin/bash
+    Go: 1.18 - /opt/homebrew/bin/go
+    Perl: 5.30.3 - /usr/bin/perl
+    PHP: 8.1.4 - /opt/homebrew/bin/php
+    Python3: 3.8.9 - /usr/bin/python3
+    Ruby: 2.6.8 - /usr/bin/ruby
+    Rust: 1.60.0 - /Users/wuxh/.cargo/bin/rustc
+  Databases:
+    SQLite: 3.37.0 - /usr/bin/sqlite3
+  Browsers:
+    Chrome: 103.0.5060.114
+    Safari: 15.5
+
