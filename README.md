@@ -13,8 +13,8 @@ docker run --rm -dp 8088:80 --name ant-design wxh16144/antd-docker-docs
 or
 
 ```bash
-git clone https://github.com/wxh16144/antd-docker-docs \
-    cd antd-docker-docs \
+git clone https://github.com/wxh16144/antd-docker-docs &&\
+    cd antd-docker-docs &&\
     docker-compose up -d
 
 # docker-compose down # 停止站点
