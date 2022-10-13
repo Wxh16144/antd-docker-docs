@@ -5,22 +5,28 @@
 ## Usage
 
 ```bash
-docker run --rm -dp 8088:80 --name ant-design wxh16144/antd-docker-docs
+docker run --rm -dp 8088:80 --name ant-design-site wxh16144/antd-docker-docs
 
-# docker stop ant-design # 停止站点
+# docker stop ant-design-site # 停止站点
 ```
 
 or
 
 ```bash
 git clone https://github.com/wxh16144/antd-docker-docs \
-    cd antd-docker-docs \
-    docker-compose up -d
+    && cd antd-docker-docs \
+    && docker-compose up -d
 
 # docker-compose down # 停止站点
 ```
 
 稍等片刻后，使用浏览器打开 [http://127.0.0.1:8088](http://127.0.0.1:8088) 即可访问
+
+## Build Image
+
+```bash
+build -t wxh16144/antd-docker-docs:[TagName] --build-arg TAG=[TagName] --build-arg PROXY [ProxyUrl]. # ← 注意这里有个 "."
+```
 
 ## Why
 
