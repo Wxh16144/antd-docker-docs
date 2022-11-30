@@ -24,4 +24,5 @@ RUN rm -rf *
 
 COPY --from=build /app/_site .
 
+# https://stackoverflow.com/a/32663332/11302760
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

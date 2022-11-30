@@ -8,6 +8,6 @@ repo=${proxy}https://github.com/ant-design/ant-design.git
 git clone --depth 1 -b $branch $repo $workdir && cd $workdir
 npm config set registry https://registry.npm.taobao.org
 npm install
-npm run predeploy
+npm run site
 
 rm -rf `ls | grep -v '^_site'`
