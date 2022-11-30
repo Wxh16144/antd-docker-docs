@@ -25,7 +25,7 @@ git clone https://github.com/wxh16144/antd-docker-docs \
 ## Build Image
 
 ```bash
-build -t wxh16144/antd-docker-docs:[TagName] --build-arg TAG=[TagName] --build-arg PROXY [ProxyUrl]. # ← 注意这里有个 "."
+build -t wxh16144/antd-docker-docs:[TagName] --build-arg TAG=[TagName] --build-arg PROXY [ProxyUrl] . # ← 注意这里有个 "."
 ```
 
 ## Why
