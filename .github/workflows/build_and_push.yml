@@ -1,12 +1,14 @@
 name: Create and publish a Docker image
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       tag:
+        description: 'Build version number'
         required: true
         type: string
       proxy:
+        description: 'Use proxy address'
         required: false
         type: string
 
