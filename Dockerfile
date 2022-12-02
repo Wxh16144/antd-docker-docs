@@ -1,8 +1,9 @@
 
 FROM node:14 as build
 
-ARG PROXY='' \
-    TAG=''
+ARG REPO='' \
+    TAG=''  \
+    NPM_REGISTRY=''
 
 RUN mkdir -p /scripts
 
@@ -12,7 +13,7 @@ WORKDIR /scripts
 
 RUN chmod +x bootstrap.sh
 
-RUN ./bootstrap.sh ${TAG} /app ${PROXY}
+RUN ./bootstrap.sh ${TAG} /app ${REPO} ${NPM_REGISTRY}
 
 FROM nginx:1.21.5-alpine
 

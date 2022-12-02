@@ -4,8 +4,9 @@ services:
     build:
       context: .
       args:
-        PROXY: '' # clone 仓库时代理地址
-        TAG: master # antd 文档tag
+        REPO: https://github.com/ant-design/ant-design.git
+        NPM_REGISTRY: https://registry.npm.taobao.org # taobao 
+        TAG: master # antd version
     container_name: ant_design_site
     restart: "on-failure:3"
     ports:

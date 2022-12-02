@@ -7,10 +7,6 @@ on:
         description: 'Build version number'
         required: true
         type: string
-      proxy:
-        description: 'Use proxy address'
-        required: false
-        type: string
 
 jobs:
   build-and-push-image:
@@ -39,7 +35,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           build-args: |
             TAG=${{ inputs.tag }}
-            PROXY=${{ inputs.proxy }}
           push: true
           tags: wxh16144/antd-docker-docs:${{ inputs.tag }}
 
