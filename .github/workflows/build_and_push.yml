@@ -36,5 +36,5 @@ jobs:
           build-args: |
             TAG=${{ inputs.tag }}
           push: true
-          tags: wxh16144/antd-docker-docs:${{ inputs.tag }}
+          tags: wxh16144/antd:${{ inputs.tag }},wxh16144/antd:latest
 

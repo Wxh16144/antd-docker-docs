@@ -5,7 +5,7 @@
 ## Usage
 
 ```bash
-docker run --rm -dp 8088:80 --name ant-design-site wxh16144/antd-docker-docs
+docker run --rm -dp 8088:80 --name ant-design-site wxh16144/antd
 
 # docker stop ant-design-site # 停止站点
 ```
@@ -25,7 +25,7 @@ git clone https://github.com/wxh16144/antd-docker-docs \
 ## Build Image
 
 ```bash
-build -t wxh16144/antd-docker-docs:[TagName] --build-arg TAG=[TagName] . # ← 注意这里有个 "."
+build -t wxh16144/antd:[TagName] --build-arg TAG=[TagName] . # ← 注意这里有个 "."
 ```
 
 ## Why
