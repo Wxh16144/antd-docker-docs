@@ -27,6 +27,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Generate build args
+        id: build-args
+        run: |
+          bash generate_tags.sh wxh16144/antd ${{ inputs.tag }} >> $GITHUB_OUTPUT
+
       -
         name: Build and push
         uses: docker/build-push-action@v3
@@ -36,5 +42,5 @@ jobs:
           build-args: |
             TAG=${{ inputs.tag }}
           push: true
-          tags: wxh16144/antd:${{ inputs.tag }},wxh16144/antd:latest
+          tags: ${{ steps.build-args.outputs }}
 
