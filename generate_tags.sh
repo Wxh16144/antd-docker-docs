@@ -16,8 +16,8 @@ function main(){
   if [ $is_latest -eq 1 ]; then
     tags="$tags,$image_name:latest"
   fi
-
-  echo $tags
+  
+  echo "\"$tags\""
 }
 
 main $@
