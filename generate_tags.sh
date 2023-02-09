@@ -17,7 +17,7 @@ function main(){
     tags="$tags,$image_name:latest"
   fi
   
-  echo "\"$tags\""
+  echo $tags
 }
 
 main $@
