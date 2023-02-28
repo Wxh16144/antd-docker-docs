@@ -18,6 +18,11 @@ jobs:
           repository: ant-design/ant-design
           ref: ${{ inputs.tag }}
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
       - name: Install dependencies
         run: npm install
 
