@@ -66,7 +66,7 @@ jobs:
           echo "tags=$(bash generate_tags.sh wxh16144/antd ${{ inputs.tag }})" >> $GITHUB_OUTPUT
 
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: antd-site
           path: _site
