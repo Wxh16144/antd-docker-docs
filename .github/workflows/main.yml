@@ -7,6 +7,11 @@ on:
         description: "Build version number"
         required: true
         type: string
+      isLatest:
+        description: "Whether to tag as latest"
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   build-antd:
@@ -62,6 +67,8 @@ jobs:
 
       - name: Generate build args
         id: build-args
+        env:
+          ANTD_LATEST_TAG: ${{ inputs.isLatest }}
         run: |
           echo "tags=$(bash generate_tags.sh wxh16144/antd ${{ inputs.tag }})" >> $GITHUB_OUTPUT
 

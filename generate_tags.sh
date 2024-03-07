@@ -13,7 +13,7 @@ function main(){
 
   local tags="$image_name:$version,$image_name:$major.$minor,$image_name:$major"
 
-  if [ $is_latest -eq 1 ]; then
+  if [ $is_latest -eq 1 ] && [ ! -z $ANTD_LATEST_TAG ]; then
     tags="$tags,$image_name:latest"
   fi
   
