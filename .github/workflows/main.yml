@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ant-design/ant-design
           ref: ${{ inputs.tag }}
@@ -26,18 +26,13 @@ jobs:
       - name: Echo Input Tag
         run: npx console-figlet@1.1.0 ${{ inputs.tag }} --font="Slant Relief"
 
-      - name: create package-lock.json
-        run: npm i --package-lock-only --ignore-scripts
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Site
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - name: bun run site
         id: site
-        run: npm run site
+        run: bun run site
         env:
-          SITE_ENV: development
-          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_OPTIONS: --max_old_space_size=4096
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -51,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2

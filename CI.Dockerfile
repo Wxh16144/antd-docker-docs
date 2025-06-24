@@ -1,11 +1,7 @@
-FROM nginx:1.21.5-alpine
+# https://lipanski.com/posts/smallest-docker-image-static-website
+# https://github.com/lipanski/docker-static-website
+FROM wcjiang/docker-static-website:latest
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-WORKDIR /usr/share/nginx/html
-
-RUN rm -rf *
-
-COPY _site .
-
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# Copy the static website
+# Use the .dockerignore file to control what ends up inside the image!
+COPY ./_site .
