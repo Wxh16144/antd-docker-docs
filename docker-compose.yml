@@ -5,7 +5,7 @@ services:
       context: .
       args:
         REPO: https://github.com/ant-design/ant-design.git
-        NPM_REGISTRY: https://registry.npm.taobao.org # taobao 
+        NPM_REGISTRY: https://registry.npmmirror.com # taobao 
         TAG: master # antd version
     container_name: ant_design_site
     restart: "on-failure:3"

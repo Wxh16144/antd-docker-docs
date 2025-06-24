@@ -1,5 +1,5 @@
 
-FROM node:14 as build
+FROM node:20 AS build
 
 ARG REPO='' \
     TAG=''  \
@@ -15,15 +15,7 @@ RUN chmod +x bootstrap.sh
 
 RUN ./bootstrap.sh ${TAG} /app ${REPO} ${NPM_REGISTRY}
 
-FROM nginx:1.21.5-alpine
+FROM joseluisq/static-web-server:2-alpine
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-WORKDIR /usr/share/nginx/html
-
-RUN rm -rf *
-
-COPY --from=build /app/_site .
-
-# https://stackoverflow.com/a/32663332/11302760
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# Copy the static website
+COPY ./_site /public

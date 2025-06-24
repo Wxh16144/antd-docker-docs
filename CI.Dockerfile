@@ -1,7 +1,4 @@
-# https://lipanski.com/posts/smallest-docker-image-static-website
-# https://github.com/lipanski/docker-static-website
-FROM wcjiang/docker-static-website:latest
+FROM joseluisq/static-web-server:2-alpine
 
 # Copy the static website
-# Use the .dockerignore file to control what ends up inside the image!
-COPY ./_site .
+COPY ./_site /public
