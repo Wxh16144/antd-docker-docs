@@ -14,35 +14,7 @@ on:
         default: false
 
 jobs:
-  build-antd:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          repository: ant-design/ant-design
-          ref: ${{ inputs.tag }}
-
-      - name: Echo Input Tag
-        run: npx console-figlet@1.1.0 ${{ inputs.tag }} --font="Slant Relief"
-
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install
-      - name: bun run site
-        id: site
-        run: bun run site
-        env:
-          NODE_OPTIONS: --max_old_space_size=4096
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: antd-site
-          path: _site
-          retention-days: 3
-
   build-and-push-image:
-    needs: build-antd
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -67,11 +39,19 @@ jobs:
         run: |
           echo "tags=$(bash generate_tags.sh wxh16144/antd ${{ inputs.tag }})" >> $GITHUB_OUTPUT
 
-      - name: Download artifact
-        uses: actions/download-artifact@v4
+      - name: Download Ant Design site artifact
+        uses: robinraju/release-downloader@v1
         with:
-          name: antd-site
-          path: _site
+          repository: ant-design/ant-design
+          tag: ${{ inputs.tag }}
+          fileName: "website.tar.gz"
+          extract: false
+          out-file-path: "tmp"
+
+      - name: Extract site and remove top-level dir
+        run: |
+          mkdir -p ./_site
+          tar -xzf tmp/website.tar.gz --strip-components=1 -C ./_site
 
       - name: Build and push
         uses: docker/build-push-action@v3
