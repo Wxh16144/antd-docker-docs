@@ -18,4 +18,5 @@ RUN ./bootstrap.sh ${TAG} /app ${REPO} ${NPM_REGISTRY}
 FROM joseluisq/static-web-server:2-alpine
 
 # Copy the static website
-COPY ./_site /public
+
+COPY --from=build --chown=sws:sws /app/_site /home/sws/public
